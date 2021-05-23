@@ -44,7 +44,7 @@ UserSchema.methods.generateJWT = async function (ipadress) {
   var today = new Date();
 
   // let u = await this.populate("permissions").execPopulate();
-  console.log("signing key: ", privateKEY);
+
   return jwt.sign(
     {
       id: this._id,
