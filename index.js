@@ -1,16 +1,14 @@
 require("dotenv").config();
 const express = require("express");
-const moment = require("moment");
-const Redis = require("ioredis");
 const cors = require("cors");
 const mdb = require("./db/MONGODB");
-const redis = new Redis({ keyPrefix: "auth:" });
 const cookieParser = require("cookie-parser");
-const { body, validationResult } = require("express-validator");
 
 const app = express();
 
 const Auth = require("./routes/auth");
+
+db.on("error", console.error.bind(console, "connection error:"));
 
 app.use(express.json());
 app.use(cookieParser());
